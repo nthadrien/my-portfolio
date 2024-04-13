@@ -1,0 +1,56 @@
+---
+import ThemeSwitcher from "./ThemeSwitcher.astro";
+---
+
+<nav class="flex justify-between items-center h-fit p-4 container larger">
+    <h3>
+        <i>nthadrien</i>
+    </h3>
+
+    <section class="flex justify-end items-center gap-4 md:gap-8">
+
+        <ThemeSwitcher />
+
+        <aside class="flex flex-col justify-center items-center md:flex-row md:h-fit gap-6">
+            <a href="/">link 0</a>
+            <a href="">link 1</a>
+            <a href="">link 2</a>
+            <a href="">link 3</a>
+        </aside>
+
+        <a href="#contacts" class="btn">
+            Get to Me
+        </a>
+
+        
+
+        <label class="hamburger">
+            <input class="hamburger" type="checkbox" name="hamb" />
+        </label>
+    </section>
+</nav>
+
+<style>
+    .hamburger {
+        @apply h-10 w-10 cursor-pointer md:hidden
+         flex-col justify-center gap-1 items-center relative flex;
+    }
+
+    input[name="hamb"] {
+        @apply appearance-none bg-gray-300 h-0.5 w-7;
+    }
+
+    .hamburger::after {
+        content: "";
+        @apply h-0.5 w-7 bg-gray-300;
+    }
+
+    .hamburger::before {
+        content: " ";
+        @apply h-0.5 w-7 bg-gray-300;
+    }
+
+    nav:has(input:checked) {
+        @apply bg-red-400;
+    }
+</style>
