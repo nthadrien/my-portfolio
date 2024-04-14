@@ -1,0 +1,27 @@
+---
+
+import Scroller from "./Scroller.astro";
+
+interface Props {
+
+};
+
+const {} = Astro.props;
+
+const ab = [
+    "Frondend Developper", "Backend Js Web developper","Fullstack Js web developper"
+]
+---
+
+<header class="min-h-[80vh] w-full p-4 flex flex-wrap-reverse justify-center items-center">
+
+    <section class="text-2xl w-full md:w-2/3">
+        <h2>Hey, Welcome to my Portfolio.</h2>
+        <div>
+            I am a <Scroller list={ab} /> <br>
+            with 2+ years of experience.
+        </div>
+    </section>
+
+    <img src=""alt="my" />
+</header>

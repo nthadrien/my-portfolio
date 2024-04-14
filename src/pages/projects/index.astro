@@ -1,10 +1,51 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 
-const title = "Projects Expo Page";
-const description = "Welcome page"
+const pageTitle = "Projects Expo Page";
+const description = "Welcome page";
+
+import { getCollection } from "astro:content";
+import ProjectCard from "../../components/ProjectCard.astro";
+
+const allProjects = await getCollection("projects");
 ---
 
-<PageLayout title={title} description={description}>
-	<h1 class="text-3xl">Astro Projects Expo</h1>
+<PageLayout title={pageTitle} description={description}>
+
+  <main class="min-h-[60vh] flex flex-col gap-8 container larger">
+
+    <h1 class="text-3xl text-center">Astro Projects Expo</h1>
+
+    <section class="flex items-center justify-between">
+
+      <label class="w-1/3">
+        <input type="search" name="find" placeholder="find framewok, Language" >
+      </label>
+
+      <div>
+        results: 8/10
+      </div>
+      
+    </section>
+
+    <p class="mx-auto w-fit">This is where I will post about my journey learning Astro.</p>
+
+
+    <section class="grid grid-flow-row grid-cols-2 md:grid-cols-3  gap-3">
+      {allProjects.map((project) => <ProjectCard project={project} />)}
+    </section>
+
+  </main>
 </PageLayout>
+
+
+<!-- <style>
+  .projects {
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax( 130px , 270px ));
+
+    gap: 0.5rem;
+    margin: 2rem auto;
+    width: 100%;
+  }
+</style> -->

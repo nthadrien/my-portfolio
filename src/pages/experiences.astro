@@ -1,0 +1,53 @@
+
+
+<main class="flex flex-col md:flex-row ">
+
+    <section>
+
+        <label>
+            skills <input type="radio" name="abilities" value="skills" />
+        </label>
+
+        <label>
+            experiences <input type="radio" name="abilities" value="experiences" />
+        </label>
+
+        <label>
+            education <input type="radio" name="abilities" value="educations" />
+        </label>
+
+    </section>
+
+    <section class="skills">
+        <h3>Skills</h3>
+    </section>
+
+    <section class="experiences">
+        <h3>Experiences</h3>
+    </section>
+
+    <section class="educations">
+        <h3>Education</h3>
+    </section>
+</main>
+
+<style>
+
+    .skills, .experiences, .educations {
+        @apply hidden
+    }
+
+    section {
+        @apply flex flex-col 
+    }
+
+    main:has(input[value="skills"]:checked) .skills,
+    main:has(input[value="experiences"]:checked) .experiences,
+    main:has(input[value="educations"]:checked) .educations {
+        @apply block
+    }
+
+
+
+
+</style>

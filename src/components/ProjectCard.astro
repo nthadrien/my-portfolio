@@ -1,0 +1,43 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+// `project` will match your 'blog' collection schema type
+const { project } = Astro.props;
+---
+
+<a
+  class="grid grid-cols-1 grid-rows-2 relative shadow-sm outline-1 outline-indigo-100 shadow-indigo-400 hover:shadow-2xl dark:border-gray-50 h-96"
+  href="/projects"
+>
+  <img
+    class="h-full w-full object-cover bg-yellow-600"
+    src={project.data.image.url}
+    alt={project.data.image.alt}
+  />
+  <div class="grid grid-rows-5 gap-3 p-4">
+    <h2
+      class="absolute top-14 left-1/2 -translate-x-1/2 text-white w-full px-2 text-center"
+    >
+      {project.data.title}
+    </h2>
+    <i><b>Period:</b> {project.data.duration}</i>
+    <p class="row-span-2"><b>Description:</b> {project.data.description}</p>
+    <p class="row-span-2">
+      <b>Tech:</b>{
+        project.data.tags.map((tag) => (
+          <span class="space-x-4 capitalize"> {tag} ,</span>
+        ))
+      }
+    </p>
+  </div>
+</a>
+
+<style>
+  p {
+    /* @apply  */
+  }
+</style>

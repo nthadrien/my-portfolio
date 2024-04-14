@@ -11,6 +11,10 @@ Inside of your Astro project, you'll see the following folders and files:
 /
 ├── public/
 ├── src/
+|   └── centent/
+|   └── components/
+|   └── Layouts/
+|   └── assets/
 │   └── pages/
 │       └── index.astro
 └── package.json

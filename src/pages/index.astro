@@ -1,10 +1,13 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+import Home from "../components/headers/Home.astro";
 
 const title = "Home Page";
 const description = "Welcome page"
 ---
 
 <PageLayout title={title} description={description}>
+	<Home />
 	<h1 class="text-3xl">Astro</h1>
+
 </PageLayout>
