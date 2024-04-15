@@ -1,13 +1,56 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
 import Home from "../components/headers/Home.astro";
+import Expo from "./experiences.astro"
+import About from "./about.astro";
+import { getCollection } from "astro:content";
+import ProjectCard from "@components/ProjectCard.astro";
 
 const title = "Home Page";
-const description = "Welcome page"
+const description = "Welcome page";
+
+
+const projects = (await getCollection('projects')).slice(0,3);
 ---
 
 <PageLayout title={title} description={description}>
 	<Home />
 	<h1 class="text-3xl">Astro</h1>
 
+
+	<Expo />
+
+	<main class="container larger min-h-lvh flex flex-col justify-center items-center gap-4">
+		<h2 class="text-center">Projects</h2>
+		<div class="flex justify-between items-center w-full">
+			<p>Recent Projects</p>
+			<a href="/projects">more &rarr;</a>
+		</div>
+
+		<div class="w-full project">
+			{projects.map( item => <ProjectCard project={item} />)}
+		</div>
+	</main>
+
+	<About />
+
 </PageLayout>
+
+<style>
+	.project {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(270px,320px));
+		justify-content: space-between;
+		overflow-x: auto;
+		gap: 1rem;
+		padding: 1rem;
+	}
+
+	.project::-webkit-scrollbar {
+		background-color: transparent;
+	}
+
+	.project::-ms-thumb {
+		background-color: gray;
+	}
+</style>

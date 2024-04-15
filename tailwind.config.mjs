@@ -14,9 +14,7 @@ export default {
       colors: {
         primary:"var(--pry-clr)",
         secondary:"var(--snd-clr)",
-        neutral:"var(--ntr-clr)",
-        "dark-primary":"var(--drk-pry-clr)",
-
+        neutral:"var(--ntr-clr)"
       }
     },
   },

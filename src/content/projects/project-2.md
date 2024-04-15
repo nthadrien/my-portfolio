@@ -4,6 +4,7 @@ startDate: 2021-07-08T12:00:00-04:00
 duration: 4 months
 description: small ecommerce template waiting to be deployed
 team: only me
+repository: https://google.com
 image:
     url: /image/me.jpg
     alt: mern

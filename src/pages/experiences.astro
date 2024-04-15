@@ -1,11 +1,10 @@
 
 
-<main class="flex flex-col md:flex-row ">
+<main class="flex flex-col gap-5 items-center justify-center md:flex-row min-h-screen w-full bg-zinc-800 dark:bg-zinc-950 text-gray-300 p-4">
 
-    <section>
-
+    <section class="w-full md:w-1/3 md:max-w-sm">
         <label>
-            skills <input type="radio" name="abilities" value="skills" />
+            skills <input type="radio" name="abilities" value="skills" checked />
         </label>
 
         <label>
@@ -19,22 +18,63 @@
     </section>
 
     <section class="skills">
-        <h3>Skills</h3>
-    </section>
+        <h2>Skills</h2>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis deserunt dolorum beatae repellendus natus. Accusantium minus reprehenderit sed dicta nisi ipsa repudiandae id! Eos nobis impedit tempore consequuntur, beatae quia.
 
-    <section class="experiences">
-        <h3>Experiences</h3>
+
+        <h4 class="animate-bounce">Soft Skills</h4>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, consequuntur! Hic veritatis optio ea placeat sed a facilis, harum earum amet natus illum iste culpa quaerat fuga nesciunt, sequi assumenda!
+
+
+        <h4 class="animate-bounce">Frameworks</h4>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio voluptatibus illo nihil cumque, illum ratione harum possimus quaerat esse nesciunt eveniet placeat deleniti ab quis quod itaque totam consectetur eligendi.
+    </section>
+ 
+    <section class="experiences animate-pulse">
+        <h2>Experiences</h2>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure beatae aspernatur nesciunt blanditiis accusantium consequuntur id commodi, laudantium distinctio nulla necessitatibus eligendi odit, unde repellat officia voluptatem nostrum dolorum amet?
+        </p>
+
+        <h3>Professional</h3>
+
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum ullam tempora provident accusamus! Nulla quaerat, praesentium odit, mollitia ut neque temporibus at laborum dolorem, et provident fugit laboriosam adipisci recusandae!
+        </p>
+
+        <h3>Academics</h3>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam consectetur itaque saepe provident repudiandae, est vero corrupti harum sed sequi nam veritatis amet, odit enim blanditiis voluptatum, ipsam dolore sit.
+        </p>
     </section>
 
     <section class="educations">
-        <h3>Education</h3>
+        <h2>Education</h2>
+
+        <h3>University of Buea</h3>
+
+        <h4>BS.c</h4>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, aliquam ratione nostrum ducimus cum quibusdam. Harum facilis fuga facere eligendi omnis, sequi illum optio. Voluptates recusandae molestiae ab possimus ullam!
+        </p>
+
+        <h3>Boot Camp</h3>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit, in impedit placeat eveniet sequi quibusdam dicta repellendus nemo a omnis aperiam accusantium eligendi, ea ab pariatur, corrupti temporibus quidem libero!
+        </p>
     </section>
+
 </main>
 
 <style>
 
+    label {
+        @apply hover:font-bold active:text-neutral justify-end has-[input:checked]:font-bold has-[input:checked]:text-secondary
+    }
+
     .skills, .experiences, .educations {
-        @apply hidden
+        @apply hidden w-full md:w-2/3 lg:max-w-xl flex-col gap-4;
     }
 
     section {
@@ -44,7 +84,7 @@
     main:has(input[value="skills"]:checked) .skills,
     main:has(input[value="experiences"]:checked) .experiences,
     main:has(input[value="educations"]:checked) .educations {
-        @apply block
+        @apply flex
     }
 
 

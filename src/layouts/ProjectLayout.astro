@@ -1,11 +1,36 @@
 ---
+import PageLayout from "./PageLayout.astro";
+import ProjectHeader from "@components/headers/Projects.astro";
+
+
 const { frontmatter } = Astro.props;
 ---
+<PageLayout title={frontmatter.title} description={frontmatter.description}>
 
 
-<p>{frontmatter.pubDate.toString().slice(0,10)}</p>
-<p><em>{frontmatter.description}</em></p>
-<p>Written by: {frontmatter.author}</p>
-<img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
 
-<slot />
+
+
+<main class="max-w-6xl w-full flex flex-wrap items-start justify-start mx-auto p-4">
+
+    <aside class="w-1/4 hidden md:flex md:translate-x-0 sticky top-10 left-0 flex-col gap-3">
+        <h2>Content</h2>
+        <a href="#one">One content</a>
+        <a href="#one">Second content</a>
+    </aside>
+    <article  class="w-full  md:w-3/4  " >
+        <ProjectHeader image={frontmatter.image} title={frontmatter.title} />
+        <slot />
+    </article>
+</main>
+
+</PageLayout>
+
+
+<style is:global>
+
+    p, code, h1, h2 , h3, h4 {
+        @apply my-6
+    }
+
+</style>

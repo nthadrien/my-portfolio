@@ -10,6 +10,7 @@ const projetsCollection = defineCollection({
         duration: z.string(),
         description: z.string(),
         team: z.string(),
+        repository: z.string().optional(),
         image: z.object({
             url: z.string(),
             alt: z.string()

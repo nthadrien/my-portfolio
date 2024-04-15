@@ -8,51 +8,47 @@ const title = "AboutMe Page";
 const description = "Welcome page";
 ---
 
-<PageLayout title={title} description={description}>
+<h2 class="text-center">About Me</h2>
+<main class="container larger flex flex-col md:flex-row gap-4">
+    <Image src={img} alt="my pic" class="w-full h-fit md:w-1/3" />
 
-    <main class="container larger flex flex-col md:flex-row gap-4">
+    <section class="flex flex-col justify-start items-start gap-4 w-full">
+       
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+            saepe necessitatibus ab perspiciatis deleniti debitis placeat maxime
+            enim sint possimus corrupti animi excepturi molestiae, tempore
+            quaerat recusandae eius ipsa sequi.
+        </p>
 
-        <Image src={img} alt="my pic" class="w-full h-fit md:w-1/3" />
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea,
+            dolore. Magni, aperiam commodi reiciendis pariatur tempora eveniet
+            voluptas odit qui atque velit exercitationem, libero amet ipsa,
+            soluta cupiditate facere ad.
+        </p>
 
-        <section class="flex flex-col justify-start items-start gap-4 w-full">
-            <h2>About Me</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-                saepe necessitatibus ab perspiciatis deleniti debitis placeat
-                maxime enim sint possimus corrupti animi excepturi molestiae,
-                tempore quaerat recusandae eius ipsa sequi.
-            </p>
+        <h3>Hobbies</h3>
 
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea,
-                dolore. Magni, aperiam commodi reiciendis pariatur tempora
-                eveniet voluptas odit qui atque velit exercitationem, libero
-                amet ipsa, soluta cupiditate facere ad.
-            </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consequatur, vero, in pariatur perferendis fuga laboriosam laborum
+            quae aliquid deserunt nobis quas, illo voluptatem distinctio
+            assumenda placeat eaque corrupti cum neque?
+        </p>
 
-            <h3>Hobbies</h3>
-
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consequatur, vero, in pariatur perferendis fuga laboriosam
-                laborum quae aliquid deserunt nobis quas, illo voluptatem
-                distinctio assumenda placeat eaque corrupti cum neque?
-            </p>
-
-            <a class="btn" href="/MyCv.docx" download="my-cv">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 24 24"
-                    ><path
-                        fill="currentColor"
-                        d="m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-8 4v-5h2v3h12v-3h2v5z"
-                    ></path></svg
-                >
-                 Download CV
-            </a>
-
-        </section>
-    </main>
-</PageLayout>
+        <a class="btn" href="/MyCv.docx" download="my-cv">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+                ><path
+                    fill="currentColor"
+                    d="m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-8 4v-5h2v3h12v-3h2v5z"
+                ></path></svg
+            >
+             Download CV
+        </a>
+    </section>
+</main>

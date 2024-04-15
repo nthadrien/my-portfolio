@@ -2,54 +2,48 @@
 import ThemeSwitcher from "./ThemeSwitcher.astro";
 ---
 
-<nav class="flex justify-between items-center h-fit p-4 container larger">
-    <h3>
-        <i>nthadrien</i>
-    </h3>
+<nav
+    class="flex flex-wrap md:h-fit md:flex-nowrap justify-between items-start h-fit p-2 container larger fixed top-0 left-1/2 -translate-x-1/2 z-30 backdrop-blur-sm"
+>
+    <h1 class="text-2xl italic">
+        nthadrien ~
+
+        <ThemeSwitcher />
+    </h1>
 
     <section class="flex justify-end items-center gap-4 md:gap-8">
 
-        <ThemeSwitcher />
-
-        <aside class="flex flex-col justify-center items-center md:flex-row md:h-fit gap-6">
-            <a href="/"> Projects</a>
-            <a href="/#skills">Skills</a>
-            <a href="/"> About Me</a>
-        </aside>
-
-        <a href="#contacts" class="btn">
-            Get to Me
-        </a>
-
-        
-
-        <label class="hamburger">
-            <input class="hamburger" type="checkbox" name="hamb" />
+        <label
+            class="h-10 w-10 flex flex-col justify-center items-center md:hidden"
+        >
+            <input
+                class="w-7 appearance-none h-1
+                before:content-[''] before:h-1 before:w-7 before:bg-green-300
+                after:content-[''] after:w-7 after:h-1 after:bg-red-300"
+                type="checkbox"
+                name="hamb"
+            />
         </label>
     </section>
+
+    <aside
+        class="flex flex-col justify-center items-center overflow-hidden w-full h-0 left-0 top-0
+            md:flex-row gap-6 md:translate-x-0 md:h-fit md:w-fit md:static"
+    >
+        <a href="/projects"> Projects</a>
+        <a href="/#skills">Skills</a>
+        <a href="/#about"> About Me</a>
+        
+        <a href="#contacts" class="btn"> Get to Me</a>
+    </aside>
 </nav>
 
 <style>
-    .hamburger {
-        @apply h-10 w-10 cursor-pointer md:hidden
-         flex-col justify-center gap-1 items-center relative flex;
-    }
-
-    input[name="hamb"] {
-        @apply appearance-none bg-gray-300 h-0.5 w-7;
-    }
-
-    .hamburger::after {
-        content: "";
-        @apply h-0.5 w-7 bg-gray-300;
-    }
-
-    .hamburger::before {
-        content: " ";
-        @apply h-0.5 w-7 bg-gray-300;
-    }
-
     nav:has(input:checked) {
-        @apply bg-red-400;
+        @apply  h-full text-inherit z-30 md:h-fit;
+    }
+
+    nav:has(input:checked) aside {
+        @apply h-fit font-semibold md:font-normal
     }
 </style>

@@ -1,15 +1,13 @@
 ---
 interface Props {
     list: string[];
-};
+}
 
 const { list } = Astro.props;
 ---
 
-
-
-<ul id="scrolling" class="inline-block h-8 overflow-y-auto scroll-smooth ">
-    { list.map( item => <li>{item}</li>) }
+<ul id="scrolling" class="inline-block h-8 overflow-y-auto scroll-smooth">
+    {list.map((item) => <li>{item}</li>)}
 </ul>
 
 <style>
@@ -28,17 +26,15 @@ const { list } = Astro.props;
 </style>
 
 <script is:inline>
+const sc = document.querySelector("#scrolling");
+var counter = 0;
 
-    const sc = document.querySelector('#scrolling');
-    var counter = 0;
-
-    setInterval(()=>{
-        sc.scrollTo( 0, counter * 32 );
-        if ( counter > 0 ) {
-            counter = 0;
-        } else {
-            counter++
-        }
-    },2000)
-
+setInterval(() => {
+    sc.scrollBy({ top: counter , left: 100, behavior: "smooth" });
+    if (counter > 0) {
+        counter = 0;
+    } else {
+        counter++;
+    }
+}, 2000);
 </script>

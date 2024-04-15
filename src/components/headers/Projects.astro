@@ -3,17 +3,18 @@
 import Scroller from "./Scroller.astro";
 
 interface Props {
-
+    title: string;
+    image: { url: string; alt: string;};
 };
 
-const {} = Astro.props;
+const { title , image } = Astro.props;
 
 const ab = [
     "Frondend Developper", "Backend Js Web developper","Fullstack Js web developper"
-]
+];
 ---
 
-<header class="min-h-lvh w-full p-4 flex flex-wrap-reverse justify-center items-center">
+<header class="min-h-64 w-full p-4 flex flex-wrap-reverse justify-center items-center bg-red-900">
 
     <section class="text-2xl w-full md:w-2/3">
         <h2>Hey, Welcome to my Portfolio.</h2>
