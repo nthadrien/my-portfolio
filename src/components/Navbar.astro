@@ -3,7 +3,7 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
 ---
 
 <nav
-    class="flex flex-wrap md:h-fit md:flex-nowrap justify-between items-start h-fit p-2 container larger fixed top-0 left-1/2 -translate-x-1/2 z-30 backdrop-blur-sm"
+    class="flex flex-wrap md:h-fit md:flex-nowrap justify-between items-start h-fit p-2 container larger sticky top-0 z-30 backdrop-blur-sm"
 >
     <h1 class="text-2xl italic">
         nthadrien ~
@@ -40,7 +40,7 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
 
 <style>
     nav:has(input:checked) {
-        @apply  h-full text-inherit z-30 md:h-fit;
+        @apply  h-screen text-inherit z-30 md:h-fit;
     }
 
     nav:has(input:checked) aside {
